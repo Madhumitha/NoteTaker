@@ -4,6 +4,13 @@
 - Application should allow users to view previously saved notes
 - Application should allow users to delete previously saved notes
 
+### Module Ideas - 
+
+- Create notes - INSERT 
+- Save notes - UPDATE
+- View previously saved notes - GET
+- Delete previously saved notes - DELETE
+
 
 ### Descriptions - 
 

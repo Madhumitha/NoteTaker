@@ -18,4 +18,4 @@ For users that need to keep track of a lot of information, it's easy to forget o
 
 ### Demo
 
-[App Image](/public/assets/img/AppImage.png)
+![](/public/assets/img/AppImage.png)

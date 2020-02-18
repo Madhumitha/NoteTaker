@@ -1,11 +1,23 @@
-var express = require("express");
-var path = require("path");
+const express = require("express");
+const path = require("path");
+const fs = require("fs");
 
-var app = express();
-var PORT = 3000;
+const app = express();
+const PORT = 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static(__dirname + '/public'));
+
+// Middleware
+
+app.get('/api/notes', (req, res) => {
+  fs.readFile('db/db.json', 'utf8', function(err, data) {
+    var db  = JSON.parse(data);
+    res.send(db);
+  });
+});
+
 
 // Routes
 

@@ -19,3 +19,8 @@ For users that need to keep track of a lot of information, it's easy to forget o
 ### Demo
 
 ![](/public/assets/img/AppImage.png)
+
+### Technologies 
+
+This application use an **express backend** and save and retrieve note data from a JSON file. 
+

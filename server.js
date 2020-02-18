@@ -11,10 +11,30 @@ app.use(express.static(__dirname + '/public'));
 
 // Middleware
 
+// GET request 
 app.get('/api/notes', (req, res) => {
   fs.readFile('db/db.json', 'utf8', function(err, data) {
-    var db  = JSON.parse(data);
+    let db  = JSON.parse(data);
     res.send(db);
+  });
+});
+
+// POST request 
+app.post('/api/notes', (req, res) => {
+  fs.readFile('db/db.json', (err, data) => {
+    if(err) throw err;
+    let json = JSON.parse(data);
+    let note = {
+      title: req.body.title,
+      text: req.body.text
+    }
+
+    json.push(note);
+
+    fs.writeFile('db/db.json', JSON.stringify(json, null, 2), (err) => {
+      if(err) throw err;
+      res.send('200');
+    });
   });
 });
 

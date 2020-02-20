@@ -1,11 +1,15 @@
+const bodyParser = require("body-parser");
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
 const uuidv1 = require('uuid/v1');
+
 const app = express();
-const PORT = 3000;
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+var serverPort = 3000;
+var PORT = process.env.PORT || serverPort;
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // Set static folder to retrieve css and js files
 app.use(express.static(__dirname + '/public'));
